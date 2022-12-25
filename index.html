@@ -10,20 +10,63 @@
             height: 100%;
             padding: 0;
             margin: 0;
+            position: relative;
         }
 
-        body {
-            background: aqua;
+        .bkg {
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*height: 100%;*/
+            /*width: 100%;*/
+            /*background-image: url("./1111.jpg");*/
+            /*background-size: 100% 100%;*/
+            /*!*按比例缩放*!*/
+            /*background-repeat: no-repeat;*/
         }
+
+        /*.bkg1 {*/
+        /*    position: absolute;*/
+        /*    left: 0;*/
+        /*    height: 100%;*/
+        /*    width: 33%;*/
+        /*    background-image: url("./3333.jpg");*/
+        /*    background-size: 100% 100%;*/
+        /*    !*按比例缩放*!*/
+        /*    background-repeat: no-repeat;*/
+        /*}*/
+        /*.bkg2 {*/
+        /*    position: absolute;*/
+        /*    right: 0;*/
+        /*    height: 100%;*/
+        /*    width: 33%;*/
+        /*    background-image: url("./2222.jpg");*/
+        /*    background-size: 100% 100%;*/
+        /*    !*按比例缩放*!*/
+        /*    background-repeat: no-repeat;*/
+        /*}*/
+
+        /*.bkg3 {*/
+        /*    position: absolute;*/
+        /*    left: 33%;*/
+        /*    height: 100%;*/
+        /*    width: 34%;*/
+        /*    background-image: url("./444.jpg");*/
+        /*    background-size: 100% 100%;*/
+        /*    !*按比例缩放*!*/
+        /*    background-repeat: no-repeat;*/
+        /*}*/
 
         canvas {
             position: absolute;
             width: 100%;
             height: 100%;
+            z-index: 999;
         }
 
         .title {
-            width: 20%;
+            z-index: 99999;
+            font-weight: 600;
+            width: 50%;
             height: 30%;
             /* 文字居中 */
             text-align: center;
@@ -32,15 +75,127 @@
             /* 背景颜色 */
             background-color: transparent;
             /* 文字颜色 */
-            color: rgba(250, 56, 175, 0.829);
+            color: rgba(250, 12, 23, 0.83);
             /* 左右居中 */
             margin: auto;
             /* 定位 */
             position: relative;
             /* 上边距 */
-            top: 40%;
+            top: 48%;
             /* 字体 */
-            font-family: "幼圆";
+            font-family: "幼圆",serif;
+        }
+
+        .index-bg {
+            position: absolute;
+            top: 0;
+            z-index: 9;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(-225deg, #473B7B 0%, #3584A7 51%, #30D2BE 100%);
+        }
+
+        .index-bg .stars {
+            height: 0
+        }
+
+        .index-bg .star {
+            display: block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+            top: 100px;
+            left: 400px;
+            position: relative;
+            -webkit-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+            -webkit-animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            animation: star-opacity 5s infinite ease-in, star-pos 5s infinite ease-in;
+            -webkit-box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+            box-shadow: 0 0 5px 5px rgba(255, 255, 255, .3);
+            opacity: 0;
+            z-index: 2
+        }
+
+        .index-bg .star:after {
+            content: '';
+            display: block;
+            top: 0;
+            left: 4px;
+            border: 0 solid #fff;
+            border-width: 0 90px 2px;
+            border-color: transparent transparent transparent rgba(255, 255, 255, .3);
+            -webkit-transform: rotate(-45deg) translate3d(1px, 3px, 0);
+            transform: rotate(-45deg) translate3d(1px, 3px, 0);
+            -webkit-box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            box-shadow: 0 0 1px 0 rgba(255, 255, 255, .1);
+            -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%
+        }
+
+        @-webkit-keyframes star-opacity {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            60% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @keyframes star-opacity {
+            0% {
+                opacity: 0
+            }
+
+            40% {
+                opacity: 1
+            }
+
+            60% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        @-webkit-keyframes star-pos {
+            0% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -webkit-transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -moz-transform: scale(0) rotate(0) translate3d(0, 0, 0)
+            }
+
+            100% {
+                transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -webkit-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -moz-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0)
+            }
+        }
+
+        @keyframes star-pos {
+            0% {
+                transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -webkit-transform: scale(0) rotate(0) translate3d(0, 0, 0);
+                -moz-transform: scale(0) rotate(0) translate3d(0, 0, 0)
+            }
+
+            100% {
+                transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -webkit-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0);
+                -moz-transform: scale(1) rotate(0) translate3d(-450px, 450px, 0)
+            }
         }
     </style>
 
@@ -48,24 +203,63 @@
 
 <body>
 
+<div class="bkg">
 
+</div>
+<div class="index-bg">
+    <div class="stars">
+        <div class="star"></div>
+        <div class="star" style="top: 80px; left: 800px; animation-delay: 3s;"></div>
+        <div class="star" style="top: 40px; left: 646px; animation-delay: 2s;"></div>
+        <div class="star" style="top: 120px; left: 395px; animation-delay: 4s;"></div>
+        <div class="star" style="top: 160px; left: 765px; animation-delay: 1s;"></div>
+        <div class="star" style="top: 170px; left: 1200px; animation-delay: 2s;"></div>
+        <div class="star" style="top: 200px; left: 1000px; animation-delay: 1s;"></div>
+    </div>
+</div>
+<div class="bkg1"></div>
+<div class="bkg2"></div>
+<div class="bkg3"></div>
 <canvas id="pinkboard"></canvas>
 
-<div class="title">恋爱100天纪念日</div>
+<div class="title">宝贝圣诞节快乐！爱你~</div>
 <script>
 
     var settings = {
         particles: {
             length: 500,
             duration: 2,
-            velocity: 100,
+            velocity: 300,
             effect: -0.75,
-            size: 30,
+            size: 40,
         },
     };
 
 
-    (function () { var b = 0; var c = ["ms", "moz", "webkit", "o"]; for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) { window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"]; window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"] } if (!window.requestAnimationFrame) { window.requestAnimationFrame = function (h, e) { var d = new Date().getTime(); var f = Math.max(0, 16 - (d - b)); var g = window.setTimeout(function () { h(d + f) }, f); b = d + f; return g } } if (!window.cancelAnimationFrame) { window.cancelAnimationFrame = function (d) { clearTimeout(d) } } }());
+    (function () {
+        var b = 0;
+        var c = ["ms", "moz", "webkit", "o"];
+        for (var a = 0; a < c.length && !window.requestAnimationFrame; ++a) {
+            window.requestAnimationFrame = window[c[a] + "RequestAnimationFrame"];
+            window.cancelAnimationFrame = window[c[a] + "CancelAnimationFrame"] || window[c[a] + "CancelRequestAnimationFrame"]
+        }
+        if (!window.requestAnimationFrame) {
+            window.requestAnimationFrame = function (h, e) {
+                var d = new Date().getTime();
+                var f = Math.max(0, 16 - (d - b));
+                var g = window.setTimeout(function () {
+                    h(d + f)
+                }, f);
+                b = d + f;
+                return g
+            }
+        }
+        if (!window.cancelAnimationFrame) {
+            window.cancelAnimationFrame = function (d) {
+                clearTimeout(d)
+            }
+        }
+    }());
 
 
     var Point = (function () {
@@ -73,6 +267,7 @@
             this.x = (typeof x !== 'undefined') ? x : 0;
             this.y = (typeof y !== 'undefined') ? y : 0;
         }
+
         Point.prototype.clone = function () {
             return new Point(this.x, this.y);
         };
@@ -101,6 +296,7 @@
             this.acceleration = new Point();
             this.age = 0;
         }
+
         Particle.prototype.initialize = function (x, y, dx, dy) {
             this.position.x = x;
             this.position.y = y;
@@ -121,6 +317,7 @@
             function ease(t) {
                 return (--t) * t * t + 1;
             }
+
             var size = image.width * ease(this.age / settings.particles.duration);
             context.globalAlpha = 1 - this.age / settings.particles.duration;
             context.drawImage(image, this.position.x - size / 2, this.position.y - size / 2, size, size);
@@ -141,6 +338,7 @@
             for (var i = 0; i < particles.length; i++)
                 particles[i] = new Particle();
         }
+
         ParticlePool.prototype.add = function (x, y, dx, dy) {
             particles[firstFree].initialize(x, y, dx, dy);
 
@@ -168,7 +366,7 @@
 
             while (particles[firstActive].age >= duration && firstActive != firstFree) {
                 firstActive++;
-                if (firstActive == particles.length) firstActive = 0;
+                if (firstActive === particles.length) firstActive = 0;
             }
 
 
@@ -229,7 +427,7 @@
             }
             context.closePath();
 
-            context.fillStyle = '#ea80b0';
+            context.fillStyle = '#ea2d44';
             context.fill();
 
             var image = new Image();
@@ -239,17 +437,12 @@
 
 
         function render() {
-
             requestAnimationFrame(render);
-
-
             var newTime = new Date().getTime() / 1000,
                 deltaTime = newTime - (time || newTime);
             time = newTime;
 
-
             context.clearRect(0, 0, canvas.width, canvas.height);
-
 
             var amount = particleRate * deltaTime;
             for (var i = 0; i < amount; i++) {
@@ -258,16 +451,15 @@
                 particles.add(canvas.width / 2 + pos.x, canvas.height / 2 - pos.y, dir.x, -dir.y);
             }
 
-
             particles.update(deltaTime);
             particles.draw(context, image);
         }
-
 
         function onResize() {
             canvas.width = canvas.clientWidth;
             canvas.height = canvas.clientHeight;
         }
+
         window.onresize = onResize;
 
 
@@ -277,7 +469,6 @@
         }, 10);
     })(document.getElementById('pinkboard'));
 </script>
-
 
 
 </body>
